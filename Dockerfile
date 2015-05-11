@@ -15,6 +15,6 @@ ENV HOME /app
 RUN cd /app && wget http://download-cf.jetbrains.com/charisma/youtrack-6.0.12634.jar
 
 EXPOSE 8080
-CMD ["/usr/bin/java", "-Xmx1g", "-jar", "/app/youtrack-6.0.12634.jar",  "0.0.0.0:8080"]
+CMD ["/usr/bin/java", "-Xmx1g", "-XX:MaxPermSize=250m", "-Djava.awt.headless=true", "-jar", "/app/youtrack-6.0.12634.jar",  "8080"]
 
 
